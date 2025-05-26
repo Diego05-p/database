@@ -1,12 +1,11 @@
-
 const express = require('express');
 const cors = require('cors');
 const config = require('./config');
 
-const authRoutes = require('./auth/routes');
-const userRoutes = require('./user/routes');
-const roleRoutes = require('./role/routes');
-const userRoleRoutes = require('./userRole/routes');
+const authRoutes = require('./routes/auth/routes');
+const userRoutes = require('./routes/user/routes');
+const roleRoutes = require('./routes/role/routes');
+const userRoleRoutes = require('./routes/userRole/routes');
 
 const app = express();
 
@@ -31,7 +30,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Error en el servidor' });
 });
 
-
 app.listen(config.port, () => {
   console.log(`Servidor iniciado en el puerto ${config.port}`);
 });
+

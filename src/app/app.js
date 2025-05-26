@@ -1,4 +1,4 @@
-const express = require("express");
+ express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -12,12 +12,11 @@ const errorHandler = require("./middleware/error");
 
 const app = express();
 
-// Middlewares de seguridad y utilidad
-app.use(helmet());             // Seguridad con headers
-app.use(cors());               // Permitir CORS
-app.use(morgan("dev"));        // Logs HTTP
-app.use(express.json());       // Parsear JSON
-app.use(express.urlencoded({ extended: true })); // Parsear formularios
+app.use(helmet());             
+app.use(cors());              
+app.use(morgan("dev"));        
+app.use(express.json());       
+app.use(express.urlencoded({ extended: true })); 
 
 // Archivos públicos (ej: imágenes subidas)
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
