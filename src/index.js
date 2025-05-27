@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const config = require('./config');
@@ -30,7 +31,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Error en el servidor' });
 });
 
+
 app.listen(config.port, () => {
   console.log(`Servidor iniciado en el puerto ${config.port}`);
 });
-
